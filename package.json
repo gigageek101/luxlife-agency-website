@@ -1,0 +1,29 @@
+{
+  "name": "luxlife-agency-website",
+  "version": "1.0.0",
+  "description": "Professional OnlyFans Management Website for LuxLife Agency",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx serve .",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "netlify deploy --prod"
+  },
+  "keywords": [
+    "onlyfans",
+    "management",
+    "agency",
+    "luxlife",
+    "content-creator"
+  ],
+  "author": "LuxLife Agency",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxlifeagency/website.git"
+  },
+  "homepage": "https://luxlifeagency.com"
+}
+
