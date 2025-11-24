@@ -4854,11 +4854,7 @@ body {
     transition: all 0.3s ease; /* Smooth transition */
 }
 
-.offer-card:hover {
-    background-color: rgba(0, 175, 240, 0.05); /* Simple color change on hover */
-    border-color: rgba(0, 175, 240, 0.2); /* Slightly stronger border on hover */
-    /* Remove any transform animations */
-}
+/* Removed all hover effects from offer cards */
 
 .offer-title {
     font-size: 18px; /* Reduced font size */
@@ -6075,90 +6071,69 @@ body {
     background: linear-gradient(135deg, rgba(255, 107, 157, 0.9), rgba(244, 114, 182, 0.9));
 }
 
-/* Compact Feature Groups */
+/* CLEAN & SIMPLE Feature Groups */
 .feature-group {
-    margin-bottom: 0;
-    padding: 0 20px 12px 20px;
+    margin-bottom: 16px;
+    padding: 0 20px;
     position: relative;
 }
 
 .feature-header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(0, 175, 240, 0.1);
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 0;
 }
 
 .feature-icon {
-    font-size: 16px;
-    width: 28px;
-    height: 28px;
+    font-size: 18px;
+    width: auto;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
-    background: rgba(0, 175, 240, 0.1);
 }
 
 .feature-header strong {
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
+    letter-spacing: 0;
 }
 
-/* Compact & Readable Feature Items - NO HOVER ANIMATIONS */
+/* CLEAN & SIMPLE Feature Items - NO ANIMATIONS */
 .feature-item {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    padding: 8px 0;
+    position: relative;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    /* NO backgrounds, NO borders, NO transitions */
+}
+
+.feature-item::before {
+    content: "✓";
+    color: #10B981;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.feature-item strong {
     font-weight: 600;
     color: var(--text-primary);
-    padding: 8px 12px;
-    position: relative;
-    line-height: 1.3;
-    border-radius: 6px;
-    margin-bottom: 2px;
-    border-left: 3px solid transparent;
-    /* NO transitions, NO hover effects */
-}
-
-/* Compact background color variations for better readability */
-.feature-item:nth-child(1) {
-    background: rgba(0, 175, 240, 0.06);
-    border-left-color: var(--of-blue);
-}
-
-.feature-item:nth-child(2) {
-    background: rgba(167, 139, 250, 0.06);
-    border-left-color: var(--accent-purple);
-}
-
-.feature-item:nth-child(3) {
-    background: rgba(255, 107, 157, 0.06);
-    border-left-color: var(--accent-pink);
-}
-
-.feature-item:nth-child(4) {
-    background: rgba(16, 185, 129, 0.06);
-    border-left-color: #10B981;
-}
-
-.feature-item:nth-child(5) {
-    background: rgba(245, 158, 11, 0.06);
-    border-left-color: #F59E0B;
-}
-
-.feature-item:nth-child(6) {
-    background: rgba(239, 68, 68, 0.06);
-    border-left-color: #EF4444;
+    flex: 1;
 }
 
 .feature-separator {
-    height: 1px;
-    background: rgba(0, 175, 240, 0.15);
-    margin: 8px 20px;
+    display: none; /* Remove visual separators for cleaner look */
 }
 
 /* Compact Pattern Breaks */
