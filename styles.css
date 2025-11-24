@@ -6206,7 +6206,7 @@ body {
     text-transform: uppercase;
 }
 
-/* EXCITING & COLORFUL Feature Items with Progressive Colors */
+/* BEAUTIFUL & COHESIVE Feature Items using Website Colors */
 .feature-item {
     font-size: 15px;
     font-weight: 600;
@@ -6214,19 +6214,24 @@ body {
     padding: 12px 16px;
     position: relative;
     line-height: 1.5;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     display: flex;
     align-items: flex-start;
     gap: 14px;
     border-radius: 12px;
-    border-left: 4px solid transparent;
+    background: rgba(0, 175, 240, 0.03);
+    border-left: 3px solid rgba(0, 175, 240, 0.2);
+    transition: all 0.2s ease;
 }
 
 .feature-item::before {
+    content: "✓";
+    color: var(--of-blue);
     font-weight: 900;
     font-size: 18px;
     flex-shrink: 0;
     margin-top: 2px;
+    text-shadow: 0 1px 2px rgba(0, 175, 240, 0.2);
 }
 
 .feature-item strong {
@@ -6235,409 +6240,98 @@ body {
     flex: 1;
 }
 
-/* Color Progression for Each Feature Group */
-
-/* BLUE CARD - Daily Operations (Green Tones) */
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(1) {
-    background: rgba(16, 185, 129, 0.08);
-    border-left-color: #10B981;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #10B981;
-    text-shadow: 0 1px 2px rgba(16, 185, 129, 0.3);
+/* Subtle variations for visual interest */
+.feature-item:nth-child(odd) {
+    background: rgba(0, 175, 240, 0.04);
+    border-left-color: rgba(0, 175, 240, 0.25);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(2) {
-    background: rgba(5, 150, 105, 0.08);
-    border-left-color: #059669;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #059669;
-    text-shadow: 0 1px 2px rgba(5, 150, 105, 0.3);
+.feature-item:nth-child(even) {
+    background: rgba(0, 175, 240, 0.02);
+    border-left-color: rgba(0, 175, 240, 0.15);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(3) {
-    background: rgba(4, 120, 87, 0.08);
-    border-left-color: #047857;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #047857;
-    text-shadow: 0 1px 2px rgba(4, 120, 87, 0.3);
+/* Card-specific accent colors for variety */
+.offer-card-premium:nth-child(2) .feature-item {
+    background: rgba(167, 139, 250, 0.03);
+    border-left-color: rgba(167, 139, 250, 0.2);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(4) {
-    background: rgba(6, 95, 70, 0.08);
-    border-left-color: #065f46;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(1) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #065f46;
-    text-shadow: 0 1px 2px rgba(6, 95, 70, 0.3);
+.offer-card-premium:nth-child(2) .feature-item::before {
+    color: var(--accent-purple);
+    text-shadow: 0 1px 2px rgba(167, 139, 250, 0.2);
 }
 
-/* BLUE CARD - Revenue Optimization (Blue Tones) */
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(1) {
-    background: rgba(59, 130, 246, 0.08);
-    border-left-color: #3B82F6;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #3B82F6;
-    text-shadow: 0 1px 2px rgba(59, 130, 246, 0.3);
+.offer-card-premium:nth-child(2) .feature-item:nth-child(odd) {
+    background: rgba(167, 139, 250, 0.04);
+    border-left-color: rgba(167, 139, 250, 0.25);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(2) {
-    background: rgba(37, 99, 235, 0.08);
-    border-left-color: #2563EB;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #2563EB;
-    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.3);
+.offer-card-premium:nth-child(2) .feature-item:nth-child(even) {
+    background: rgba(167, 139, 250, 0.02);
+    border-left-color: rgba(167, 139, 250, 0.15);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(3) {
-    background: rgba(29, 78, 216, 0.08);
-    border-left-color: #1D4ED8;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #1D4ED8;
-    text-shadow: 0 1px 2px rgba(29, 78, 216, 0.3);
+.offer-card-premium:nth-child(3) .feature-item {
+    background: rgba(255, 107, 157, 0.03);
+    border-left-color: rgba(255, 107, 157, 0.2);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(4) {
-    background: rgba(30, 64, 175, 0.08);
-    border-left-color: #1E40AF;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(3) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #1E40AF;
-    text-shadow: 0 1px 2px rgba(30, 64, 175, 0.3);
+.offer-card-premium:nth-child(3) .feature-item::before {
+    color: var(--accent-pink);
+    text-shadow: 0 1px 2px rgba(255, 107, 157, 0.2);
 }
 
-/* BLUE CARD - Analytics (Cyan Tones) */
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(1) {
-    background: rgba(6, 182, 212, 0.08);
-    border-left-color: #06B6D4;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #06B6D4;
-    text-shadow: 0 1px 2px rgba(6, 182, 212, 0.3);
+.offer-card-premium:nth-child(3) .feature-item:nth-child(odd) {
+    background: rgba(255, 107, 157, 0.04);
+    border-left-color: rgba(255, 107, 157, 0.25);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(2) {
-    background: rgba(8, 145, 178, 0.08);
-    border-left-color: #0891B2;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #0891B2;
-    text-shadow: 0 1px 2px rgba(8, 145, 178, 0.3);
+.offer-card-premium:nth-child(3) .feature-item:nth-child(even) {
+    background: rgba(255, 107, 157, 0.02);
+    border-left-color: rgba(255, 107, 157, 0.15);
 }
 
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(3) {
-    background: rgba(14, 116, 144, 0.08);
-    border-left-color: #0E7490;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #0E7490;
-    text-shadow: 0 1px 2px rgba(14, 116, 144, 0.3);
-}
-
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(4) {
-    background: rgba(21, 94, 117, 0.08);
-    border-left-color: #155E75;
-}
-.offer-card-premium:nth-child(1) .feature-group:nth-child(5) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #155E75;
-    text-shadow: 0 1px 2px rgba(21, 94, 117, 0.3);
-}
-
-/* PURPLE CARD - Instagram Management (Purple Tones) */
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(1) {
-    background: rgba(147, 51, 234, 0.08);
-    border-left-color: #9333EA;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #9333EA;
-    text-shadow: 0 1px 2px rgba(147, 51, 234, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(2) {
-    background: rgba(126, 34, 206, 0.08);
-    border-left-color: #7E22CE;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #7E22CE;
-    text-shadow: 0 1px 2px rgba(126, 34, 206, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(3) {
-    background: rgba(109, 40, 217, 0.08);
-    border-left-color: #6D28D9;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #6D28D9;
-    text-shadow: 0 1px 2px rgba(109, 40, 217, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(4) {
-    background: rgba(88, 28, 135, 0.08);
-    border-left-color: #581C87;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(1) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #581C87;
-    text-shadow: 0 1px 2px rgba(88, 28, 135, 0.3);
-}
-
-/* PURPLE CARD - Your Role (Indigo Tones) */
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(1) {
-    background: rgba(99, 102, 241, 0.08);
-    border-left-color: #6366F1;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #6366F1;
-    text-shadow: 0 1px 2px rgba(99, 102, 241, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(2) {
-    background: rgba(79, 70, 229, 0.08);
-    border-left-color: #4F46E5;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #4F46E5;
-    text-shadow: 0 1px 2px rgba(79, 70, 229, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(3) {
-    background: rgba(67, 56, 202, 0.08);
-    border-left-color: #4338CA;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #4338CA;
-    text-shadow: 0 1px 2px rgba(67, 56, 202, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(4) {
-    background: rgba(55, 48, 163, 0.08);
-    border-left-color: #3730A3;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(3) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #3730A3;
-    text-shadow: 0 1px 2px rgba(55, 48, 163, 0.3);
-}
-
-/* PURPLE CARD - Algorithm Optimization (Violet Tones) */
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(1) {
-    background: rgba(139, 92, 246, 0.08);
-    border-left-color: #8B5CF6;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #8B5CF6;
-    text-shadow: 0 1px 2px rgba(139, 92, 246, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(2) {
-    background: rgba(124, 58, 237, 0.08);
-    border-left-color: #7C3AED;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #7C3AED;
-    text-shadow: 0 1px 2px rgba(124, 58, 237, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(3) {
-    background: rgba(109, 40, 217, 0.08);
-    border-left-color: #6D28D9;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #6D28D9;
-    text-shadow: 0 1px 2px rgba(109, 40, 217, 0.3);
-}
-
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(4) {
-    background: rgba(91, 33, 182, 0.08);
-    border-left-color: #5B21B6;
-}
-.offer-card-premium:nth-child(2) .feature-group:nth-child(5) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #5B21B6;
-    text-shadow: 0 1px 2px rgba(91, 33, 182, 0.3);
-}
-
-/* PINK CARD - Monthly Strategy (Rose Tones) */
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(1) {
-    background: rgba(244, 63, 94, 0.08);
-    border-left-color: #F43F5E;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #F43F5E;
-    text-shadow: 0 1px 2px rgba(244, 63, 94, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(2) {
-    background: rgba(225, 29, 72, 0.08);
-    border-left-color: #E11D48;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #E11D48;
-    text-shadow: 0 1px 2px rgba(225, 29, 72, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(3) {
-    background: rgba(190, 18, 60, 0.08);
-    border-left-color: #BE123C;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #BE123C;
-    text-shadow: 0 1px 2px rgba(190, 18, 60, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(4) {
-    background: rgba(159, 18, 57, 0.08);
-    border-left-color: #9F1239;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(1) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #9F1239;
-    text-shadow: 0 1px 2px rgba(159, 18, 57, 0.3);
-}
-
-/* PINK CARD - Revenue Split (Pink Tones) */
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(1) {
-    background: rgba(236, 72, 153, 0.08);
-    border-left-color: #EC4899;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #EC4899;
-    text-shadow: 0 1px 2px rgba(236, 72, 153, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(2) {
-    background: rgba(219, 39, 119, 0.08);
-    border-left-color: #DB2777;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #DB2777;
-    text-shadow: 0 1px 2px rgba(219, 39, 119, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(3) {
-    background: rgba(190, 24, 93, 0.08);
-    border-left-color: #BE185D;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #BE185D;
-    text-shadow: 0 1px 2px rgba(190, 24, 93, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(4) {
-    background: rgba(157, 23, 77, 0.08);
-    border-left-color: #9D174D;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(3) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #9D174D;
-    text-shadow: 0 1px 2px rgba(157, 23, 77, 0.3);
-}
-
-/* PINK CARD - Direct Communication (Fuchsia Tones) */
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(1) {
-    background: rgba(217, 70, 239, 0.08);
-    border-left-color: #D946EF;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(1)::before {
-    content: "✓";
-    color: #D946EF;
-    text-shadow: 0 1px 2px rgba(217, 70, 239, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(2) {
-    background: rgba(192, 38, 211, 0.08);
-    border-left-color: #C026D3;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(2)::before {
-    content: "✓";
-    color: #C026D3;
-    text-shadow: 0 1px 2px rgba(192, 38, 211, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(3) {
-    background: rgba(162, 28, 175, 0.08);
-    border-left-color: #A21CAF;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(3)::before {
-    content: "✓";
-    color: #A21CAF;
-    text-shadow: 0 1px 2px rgba(162, 28, 175, 0.3);
-}
-
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(4) {
-    background: rgba(134, 25, 143, 0.08);
-    border-left-color: #86198F;
-}
-.offer-card-premium:nth-child(3) .feature-group:nth-child(5) .feature-item:nth-child(4)::before {
-    content: "✓";
-    color: #86198F;
-    text-shadow: 0 1px 2px rgba(134, 25, 143, 0.3);
-}
+/* Removed forced color progression - using natural website colors instead */
 
 .feature-separator {
     display: none; /* Keep clean look */
 }
 
-/* Apply exciting styles to existing offers-grid class */
+/* Beautiful three-card layout using website colors */
 .offers-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     margin-top: 40px;
 }
 
 .offers-grid .offer-card-premium:nth-child(3) {
-    grid-column: 1 / -1;
-    max-width: 600px;
-    margin: 0 auto;
-    justify-self: center;
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+    justify-self: auto;
 }
 
-/* Responsive Design */
+/* Responsive Design for Beautiful Three-Column Layout */
+@media (max-width: 1200px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .offers-grid .offer-card-premium:nth-child(3) {
+        grid-column: 1;
+        max-width: none;
+        margin: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .offers-grid-exciting,
     .offers-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    .offers-grid-exciting .offer-card-premium:nth-child(3),
-    .offers-grid .offer-card-premium:nth-child(3) {
-        grid-column: 1;
-        max-width: none;
-        margin: 0;
     }
     
     .offer-icon {
@@ -6647,6 +6341,14 @@ body {
     
     .offer-title {
         font-size: 18px;
+    }
+    
+    .offer-header {
+        padding: 25px 20px 0 20px;
+    }
+    
+    .feature-group {
+        padding: 0 20px;
     }
 }
 
