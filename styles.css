@@ -351,8 +351,8 @@ body {
     font-size: clamp(18px, 2vw, 22px);
     color: var(--text-secondary);
     margin-bottom: 40px;
-    line-height: 1.7;
-    max-width: 700px;
+    line-height: 1.9;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -360,6 +360,102 @@ body {
 .hero-subtitle strong {
     color: var(--of-blue);
     font-weight: 700;
+}
+
+/* Text Styling Utilities */
+.cursive-text {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--accent-pink);
+}
+
+.highlight-text {
+    color: var(--of-blue);
+    font-weight: 800;
+    position: relative;
+}
+
+.underline-text {
+    text-decoration: underline;
+    text-decoration-color: var(--of-blue);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+}
+
+.big-text {
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 900;
+    color: var(--text-primary);
+}
+
+.emphasis-box {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 175, 240, 0.15) 0%, rgba(255, 107, 157, 0.15) 100%);
+    padding: 16px 24px;
+    border-radius: 16px;
+    border-left: 4px solid var(--of-blue);
+    font-weight: 700;
+    color: var(--text-primary);
+    box-shadow: 0 4px 12px rgba(0, 175, 240, 0.15);
+}
+
+.cta-button-secondary {
+    background: white;
+    color: var(--of-blue);
+    border: 3px solid var(--of-blue);
+    box-shadow: 0 4px 12px rgba(0, 175, 240, 0.25);
+}
+
+.cta-button-secondary:hover {
+    background: var(--gradient-1);
+    color: white;
+    border-color: var(--of-blue);
+}
+
+/* ========================================
+   VISUAL BREAKS & PATTERN SECTIONS
+======================================== */
+
+.visual-break {
+    position: relative;
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba(230, 247, 253, 0.5) 0%, rgba(255, 245, 248, 0.5) 50%, rgba(240, 230, 255, 0.5) 100%);
+    overflow: hidden;
+}
+
+.pattern-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(0, 175, 240, 0.1) 2px, transparent 2px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.break-text {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.break-emoji {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    animation: bounce 2s infinite;
+}
+
+.break-text p {
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0;
+}
+
+.break-text strong {
+    font-weight: 800;
+    color: var(--of-blue);
 }
 
 .hero-stats {
@@ -571,6 +667,43 @@ body {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.challenge-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.challenge-list li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.challenge-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--of-blue);
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.key-point {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+    padding: 16px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-pink);
+    margin: 20px 0 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.15);
 }
 
 /* ========================================
