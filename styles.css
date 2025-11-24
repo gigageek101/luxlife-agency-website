@@ -398,7 +398,7 @@ body {
 
 .visual-break {
     position: relative;
-    padding: 60px 0;
+    padding: 40px 0;
     background: linear-gradient(135deg, rgba(230, 247, 253, 0.5) 0%, rgba(255, 245, 248, 0.5) 50%, rgba(240, 230, 255, 0.5) 100%);
     overflow: hidden;
 }
@@ -422,7 +422,7 @@ body {
     font-size: 48px;
     display: block;
     margin-bottom: 16px;
-    animation: bounce 2s infinite;
+    /* animation removed for cleaner look */
 }
 
 .break-text p {
@@ -443,7 +443,7 @@ body {
 
 .visual-break-cta {
     background: linear-gradient(135deg, rgba(230, 247, 253, 0.7) 0%, rgba(0, 175, 240, 0.05) 100%);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .visual-break-cta .break-text p {
@@ -496,7 +496,7 @@ body {
 
 .mini-divider-icon {
     font-size: 24px;
-    animation: pulse 2s infinite;
+    /* animation removed */
 }
 
 /* Colored highlight boxes */
@@ -553,7 +553,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-top: 60px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
@@ -702,7 +702,7 @@ body {
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 48px;
 }
 
 .section-tag {
@@ -740,7 +740,7 @@ body {
 ======================================== */
 
 .challenges {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
     background: var(--light-bg);
 }
@@ -925,7 +925,7 @@ body {
 ======================================== */
 
 .offers {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -1154,7 +1154,7 @@ body {
 ======================================== */
 
 .requirements {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -1277,7 +1277,7 @@ body {
 ======================================== */
 
 .service-breakdown {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -1401,7 +1401,7 @@ body {
 ======================================== */
 
 .testimonials {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -1490,8 +1490,8 @@ body {
 .top-testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-    margin-top: 48px;
+    gap: 24px;
+    margin-top: 32px;
 }
 
 .top-video-card {
@@ -1788,7 +1788,7 @@ body {
 ======================================== */
 
 .blog {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
     background: var(--light-bg);
 }
@@ -1901,7 +1901,7 @@ body {
 ======================================== */
 
 .application {
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -2455,7 +2455,7 @@ body {
 
 .revenue-timeline-section {
     background: linear-gradient(180deg, rgba(230, 247, 253, 0.3) 0%, rgba(255, 245, 248, 0.3) 100%);
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
     overflow: hidden;
 }
@@ -2475,7 +2475,7 @@ body {
 .revenue-milestones {
     position: relative;
     max-width: 900px;
-    margin: 60px auto 0;
+    margin: 40px auto 0;
     padding: 0 20px;
 }
 
@@ -2484,7 +2484,7 @@ body {
     position: relative;
     display: flex;
     gap: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     opacity: 0;
     transform: translateY(30px);
     animation: milestoneSlideIn 0.8s ease forwards;
@@ -2790,8 +2790,8 @@ body {
 /* Timeline CTA */
 .timeline-cta {
     text-align: center;
-    margin-top: 60px;
-    padding: 40px;
+    margin-top: 40px;
+    padding: 30px;
     background: white;
     border-radius: 20px;
     border: 2px solid var(--of-blue-light);
@@ -2846,7 +2846,7 @@ body {
 
 .success-stories-section {
     background: linear-gradient(180deg, white 0%, rgba(230, 247, 253, 0.3) 100%);
-    padding: 120px 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -2866,7 +2866,7 @@ body {
     font-weight: 800;
     color: var(--text-primary);
     text-align: center;
-    margin: 60px 0 16px 0;
+    margin: 40px 0 16px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2876,7 +2876,7 @@ body {
 
 .title-icon {
     font-size: 36px;
-    animation: bounce 2s infinite;
+    /* animation removed */
 }
 
 @keyframes bounce {
@@ -2907,7 +2907,7 @@ body {
     text-align: center;
     font-size: 18px;
     color: var(--text-secondary);
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     font-style: italic;
 }
 
@@ -2916,16 +2916,16 @@ body {
 ======================================== */
 
 .revenue-proof-pairs {
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
 .revenue-proof-pair {
     display: grid;
     grid-template-columns: 500px 1fr;
-    gap: 48px;
+    gap: 40px;
     align-items: center;
-    margin-bottom: 60px;
-    padding: 40px;
+    margin-bottom: 40px;
+    padding: 32px;
     background: white;
     border-radius: 24px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
@@ -3025,7 +3025,7 @@ body {
     font-size: 32px;
     color: white;
     box-shadow: 0 8px 30px rgba(0, 175, 240, 0.4);
-    animation: pulse 2s infinite;
+    /* animation removed */
 }
 
 .video-testimonial-badge {
@@ -3262,14 +3262,14 @@ body {
 /* Success Stories CTA */
 .success-stories-cta {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .cta-box {
     background: linear-gradient(135deg, rgba(0, 175, 240, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
     border: 3px solid var(--of-blue-light);
     border-radius: 24px;
-    padding: 60px 40px;
+    padding: 40px;
     max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 15px 50px rgba(0, 175, 240, 0.1);
