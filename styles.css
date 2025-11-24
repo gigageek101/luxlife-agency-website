@@ -647,16 +647,7 @@ body {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-secondary);
-    font-size: 12px;
+    display: none;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2.5px;
@@ -4208,159 +4199,78 @@ body {
     opacity: 0.4;
 }
 
-/* Exciting Center Divider */
+/* Simple Center Divider */
 .center-divider {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 30px 0;
+    gap: 16px;
+    padding: 24px 0;
     position: relative;
 }
 
 .divider-line {
-    width: 4px;
-    height: 80px;
-    background: linear-gradient(180deg, transparent 0%, #667eea 20%, #764ba2 40%, #f093fb 60%, #f5576c 80%, transparent 100%);
-    border-radius: 2px;
-    animation: dividerFlow 3s ease-in-out infinite;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
-}
-
-@keyframes dividerFlow {
-    0%, 100% { 
-        background-position: 0% 50%;
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
-    }
-    50% { 
-        background-position: 100% 50%;
-        box-shadow: 0 0 40px rgba(240, 147, 251, 0.6);
-    }
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(180deg, transparent 0%, rgba(148, 163, 184, 0.4) 50%, transparent 100%);
 }
 
 .divider-vs {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 2px solid rgba(148, 163, 184, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    font-weight: 900;
-    color: #667eea;
-    box-shadow: 
-        0 0 40px rgba(102, 126, 234, 0.4),
-        0 10px 30px rgba(0, 0, 0, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.8);
-    animation: vsRotate 4s ease-in-out infinite;
-    position: relative;
-    z-index: 2;
+    font-size: 16px;
+    font-weight: 700;
+    color: #64748b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .divider-vs::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #667eea);
-    animation: rotate 8s linear infinite;
-    z-index: -1;
-    opacity: 0.7;
+    display: none;
 }
 
-@keyframes vsRotate {
-    0%, 100% { 
-        transform: rotate(0deg) scale(1);
-        box-shadow: 0 0 40px rgba(102, 126, 234, 0.4), 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-    50% { 
-        transform: rotate(180deg) scale(1.1);
-        box-shadow: 0 0 60px rgba(240, 147, 251, 0.6), 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* Exciting Partnership CTA */
+/* Simple Partnership CTA */
 .partnership-cta {
     text-align: center;
     position: relative;
 }
 
 .cta-text {
-    font-size: 22px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 30px;
-    font-weight: 700;
-    animation: ctaTextGlow 3s ease-in-out infinite;
-}
-
-@keyframes ctaTextGlow {
-    0%, 100% { 
-        filter: brightness(1);
-        text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-    }
-    50% { 
-        filter: brightness(1.3);
-        text-shadow: 0 0 40px rgba(240, 147, 251, 0.5);
-    }
+    font-size: 18px;
+    color: #334155;
+    margin-bottom: 24px;
+    font-weight: 600;
 }
 
 .cta-button-partnership {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-    background-size: 300% 300%;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     border: none;
-    padding: 20px 40px;
-    font-size: 18px;
-    font-weight: 800;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 700;
     color: white;
-    border-radius: 50px;
+    border-radius: 8px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 
-        0 0 40px rgba(102, 126, 234, 0.4),
-        0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: ctaButtonFlow 4s ease-in-out infinite;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .cta-button-partnership::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.cta-button-partnership:hover::before {
-    left: 100%;
+    display: none;
 }
 
 .cta-button-partnership:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 
-        0 0 60px rgba(102, 126, 234, 0.6),
-        0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes ctaButtonFlow {
-    0%, 100% { 
-        background-position: 0% 50%;
-    }
-    50% { 
-        background-position: 100% 50%;
-    }
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
 /* Responsive */
@@ -4625,4 +4535,43 @@ body {
     .excluded-tasks ul {
         grid-template-columns: 1fr;
     }
+}
+
+/* ========================================
+   BEAUTIFUL EMOJI STYLING
+======================================== */
+.section-tag,
+.break-emoji,
+.milestone-icon,
+.video-testimonial-badge {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make emojis slightly larger and more prominent */
+.break-emoji {
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 0 8px;
+    filter: brightness(1.1) contrast(1.05);
+}
+
+.milestone-icon {
+    font-size: 1.1em;
+    filter: brightness(1.1) contrast(1.05);
+}
+
+/* Clean up section tag emojis */
+.section-tag {
+    font-size: 13px;
+    filter: brightness(1.05);
+}
+
+/* Video testimonial badge emojis */
+.video-testimonial-badge {
+    filter: brightness(1.1);
 }
