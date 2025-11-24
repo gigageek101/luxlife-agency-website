@@ -209,19 +209,22 @@ if (window.innerWidth > 768) {
 // FILE UPLOAD HANDLER
 // ========================================
 
-const fileInput = document.getElementById('revenue-proof');
-const fileLabel = document.querySelector('.file-upload-label');
-const fileName = document.querySelector('.file-name');
-
-if (fileInput) {
-    fileInput.addEventListener('change', (e) => {
+// Handle content samples upload
+const contentSamplesInput = document.getElementById('content-samples');
+if (contentSamplesInput) {
+    contentSamplesInput.addEventListener('change', (e) => {
+        const fileLabel = contentSamplesInput.closest('.file-upload-wrapper').querySelector('.file-upload-label');
+        const fileNameSpan = fileLabel.querySelector('.file-name');
+        
         if (e.target.files.length > 0) {
-            const file = e.target.files[0];
-            fileName.textContent = file.name;
+            const fileCount = e.target.files.length;
+            fileNameSpan.textContent = `${fileCount} file${fileCount > 1 ? 's' : ''} selected`;
             fileLabel.style.borderColor = 'var(--of-blue)';
+            fileLabel.style.background = 'var(--bright-bg)';
         } else {
-            fileName.textContent = '';
-            fileLabel.style.borderColor = 'rgba(0, 175, 240, 0.3)';
+            fileNameSpan.textContent = '';
+            fileLabel.style.borderColor = 'rgba(0, 175, 240, 0.4)';
+            fileLabel.style.background = 'var(--light-bg)';
         }
     });
 }
@@ -607,197 +610,55 @@ Professional OnlyFans Management | 50/50 Partnership
 console.log('%cInterested in working with us? Apply at the bottom of the page!', 'color: #94A3B8; font-size: 12px;');
 
 // ========================================
-// TESTIMONIAL CAROUSEL
+// TOP TESTIMONIALS VIDEO HANDLER
 // ========================================
 
-const testimonialCarousel = () => {
-    const carousel = document.getElementById('testimonialCarousel');
-    const slides = carousel.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const prevButton = document.getElementById('prevTestimonial');
-    const nextButton = document.getElementById('nextTestimonial');
+const initTopTestimonials = () => {
+    const topVideos = document.querySelectorAll('.top-video-card video');
     
-    let currentSlide = 0;
-    let autoPlayInterval;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    // Show specific slide
-    const showSlide = (index) => {
-        // Remove active class from all slides and dots
-        slides.forEach(slide => {
-            slide.classList.remove('active', 'slide-out-left', 'slide-out-right');
-        });
-        dots.forEach(dot => dot.classList.remove('active'));
+    topVideos.forEach(video => {
+        const wrapper = video.closest('.video-wrapper');
+        const overlay = wrapper ? wrapper.querySelector('.video-overlay') : null;
         
-        // Add active class to current slide and dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        
-        currentSlide = index;
-    };
-    
-    // Next slide
-    const nextSlide = () => {
-        const nextIndex = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('slide-out-left');
-        setTimeout(() => {
-            showSlide(nextIndex);
-        }, 300);
-    };
-    
-    // Previous slide
-    const prevSlide = () => {
-        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-        slides[currentSlide].classList.add('slide-out-right');
-        setTimeout(() => {
-            showSlide(prevIndex);
-        }, 300);
-    };
-    
-    // Auto play
-    const startAutoPlay = () => {
-        autoPlayInterval = setInterval(() => {
-            nextSlide();
-        }, 5000); // Change slide every 5 seconds
-    };
-    
-    const stopAutoPlay = () => {
-        if (autoPlayInterval) {
-            clearInterval(autoPlayInterval);
-        }
-    };
-    
-    // Button click handlers
-    if (nextButton) {
-        nextButton.addEventListener('click', () => {
-            stopAutoPlay();
-            nextSlide();
-            startAutoPlay();
-        });
-    }
-    
-    if (prevButton) {
-        prevButton.addEventListener('click', () => {
-            stopAutoPlay();
-            prevSlide();
-            startAutoPlay();
-        });
-    }
-    
-    // Dot click handlers
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            stopAutoPlay();
-            if (index > currentSlide) {
-                slides[currentSlide].classList.add('slide-out-left');
-            } else if (index < currentSlide) {
-                slides[currentSlide].classList.add('slide-out-right');
-            }
-            setTimeout(() => {
-                showSlide(index);
-            }, 300);
-            startAutoPlay();
-        });
-    });
-    
-    // Touch/swipe handlers for mobile
-    if (carousel) {
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-        
-        // Mouse drag handlers for desktop
-        let isDragging = false;
-        let dragStartX = 0;
-        
-        carousel.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            dragStartX = e.clientX;
-            carousel.style.cursor = 'grabbing';
-        });
-        
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-        });
-        
-        carousel.addEventListener('mouseup', (e) => {
-            if (!isDragging) return;
-            isDragging = false;
-            carousel.style.cursor = 'grab';
-            
-            const dragEndX = e.clientX;
-            const diff = dragStartX - dragEndX;
-            
-            if (Math.abs(diff) > 50) {
-                stopAutoPlay();
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-                startAutoPlay();
+        // Hide overlay when video plays
+        video.addEventListener('play', () => {
+            if (overlay) {
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
             }
         });
         
-        carousel.addEventListener('mouseleave', () => {
-            isDragging = false;
-            carousel.style.cursor = 'grab';
+        // Show overlay when video pauses
+        video.addEventListener('pause', () => {
+            if (overlay && video.currentTime > 0 && !video.ended) {
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'auto';
+            }
         });
         
-        carousel.style.cursor = 'grab';
-    }
-    
-    const handleSwipe = () => {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
-        
-        if (Math.abs(diff) > swipeThreshold) {
-            stopAutoPlay();
-            if (diff > 0) {
-                // Swipe left - next slide
-                nextSlide();
-            } else {
-                // Swipe right - previous slide
-                prevSlide();
+        // Show overlay when video ends
+        video.addEventListener('ended', () => {
+            if (overlay) {
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'auto';
             }
-            startAutoPlay();
-        }
-    };
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            stopAutoPlay();
-            prevSlide();
-            startAutoPlay();
-        } else if (e.key === 'ArrowRight') {
-            stopAutoPlay();
-            nextSlide();
-            startAutoPlay();
+        });
+        
+        // Click overlay to play video
+        if (overlay) {
+            overlay.addEventListener('click', (e) => {
+                e.stopPropagation();
+                video.play();
+            });
         }
     });
-    
-    // Pause on hover
-    if (carousel) {
-        carousel.addEventListener('mouseenter', stopAutoPlay);
-        carousel.addEventListener('mouseleave', startAutoPlay);
-    }
-    
-    // Start auto play
-    startAutoPlay();
 };
 
-// Initialize carousel when DOM is loaded
+// Initialize top testimonials when DOM is loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', testimonialCarousel);
+    document.addEventListener('DOMContentLoaded', initTopTestimonials);
 } else {
-    testimonialCarousel();
+    initTopTestimonials();
 }
 
 // ========================================

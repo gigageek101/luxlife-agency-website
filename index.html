@@ -55,7 +55,6 @@
         <div class="container header-content">
             <div class="logo">
                 <span class="logo-text">LuxLife Agency</span>
-                <div class="logo-glow"></div>
             </div>
             <nav class="nav">
                 <a href="#problem" class="nav-link">The Problem</a>
@@ -81,13 +80,11 @@
                     <br>and Your Creative Energy is <em class="cursive-text">Gone</em>
                 </h1>
                 <p class="hero-subtitle">
-                    You wake up already <strong class="highlight-text">stressed</strong>. You spend <strong class="highlight-text underline-text">8+ hours daily</strong> drowning in DMs, scheduling content, managing subscribers... 
+                    <strong class="highlight-text">You're exhausted.</strong> Spending <strong class="highlight-text underline-text">8+ hours daily</strong> on DMs, scheduling, managing subscribers... and by the time you're "done," you have <strong>ZERO creative energy left</strong>.
                     <br><br>
-                    <span class="emphasis-box">By the time you're "done," you have ZERO energy left to actually create.</span>
+                    <span class="emphasis-box">Your content suffers because you're drowning in operations instead of creating.</span>
                     <br><br>
-                    That's why your income isn't growing. <em>You're stuck managing instead of creating.</em>
-                    <br><br>
-                    <strong class="big-text">We handle everything except content creation.</strong> You get your <span class="gradient-text">creative energy back</span> + better revenue.
+                    <strong class="big-text">We handle ALL the backend work.</strong> You create. We manage. You get your <span class="gradient-text">energy & time back</span> + grow your revenue.
                 </p>
                 <a href="#testimonials" class="cta-button cta-button-secondary" style="margin-right: 16px;">
                     <span>See Results First</span>
@@ -137,44 +134,60 @@
                 <p class="section-subtitle"><strong class="underline-text">See what happens</strong> when you <em>finally</em> have time to create instead of manage.</p>
             </div>
 
-            <!-- Creator Testimonials -->
-            <div class="testimonial-section fade-in-up">
-                <!-- Testimonial Carousel -->
-                <div class="testimonial-carousel-wrapper">
-                    <div class="testimonial-carousel" id="testimonialCarousel">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-slide active">
-                            <div class="testimonial-image-container">
-                                <img src="testemonial1.png" alt="Creator Testimonial 1" class="testimonial-image">
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-image-container">
-                                <img src="testemonial2.png" alt="Creator Testimonial 2" class="testimonial-image">
-                            </div>
+            <!-- Video Testimonials Grid -->
+            <div class="top-testimonials-grid fade-in-up">
+                <!-- Video 1 -->
+                <div class="top-video-card" style="animation-delay: 0.1s">
+                    <div class="video-wrapper">
+                        <video class="landscape-video" controls preload="metadata" poster="">
+                            <source src="review-1_bvq6qz.mov" type="video/mp4">
+                            <source src="review-1_bvq6qz.mov" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
                         </div>
                     </div>
-                    
-                    <!-- Navigation Arrows -->
-                    <button class="carousel-arrow carousel-arrow-left" id="prevTestimonial">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-                    <button class="carousel-arrow carousel-arrow-right" id="nextTestimonial">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
-                    
-                    <!-- Navigation Dots -->
-                    <div class="carousel-dots" id="testimonialDots">
-                        <button class="carousel-dot active" data-slide="0"></button>
-                        <button class="carousel-dot" data-slide="1"></button>
-                    </div>
+                    <div class="top-video-badge">💰 Revenue Proof</div>
                 </div>
+
+                <!-- Video 2 -->
+                <div class="top-video-card" style="animation-delay: 0.2s">
+                    <div class="video-wrapper">
+                        <video class="landscape-video" controls preload="metadata" poster="">
+                            <source src="review-2_eznznr.mov" type="video/mp4">
+                            <source src="review-2_eznznr.mov" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="top-video-badge">📈 Growth Story</div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="top-video-card" style="animation-delay: 0.3s">
+                    <div class="video-wrapper">
+                        <video class="landscape-video" controls preload="metadata" poster="">
+                            <source src="review-3_ny08fh.mov" type="video/mp4">
+                            <source src="review-3_ny08fh.mov" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="top-video-badge">✨ Success Story</div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="testimonials-cta fade-in-up" style="margin-top: 48px; text-align: center;">
+                <a href="#apply" class="cta-button">
+                    <span>Ready to Join Them? Apply Now</span>
+                    <div class="button-glow"></div>
+                </a>
             </div>
         </div>
     </section>
@@ -287,6 +300,17 @@
                         <strong>Result?</strong> You're stuck at your current income ceiling. Can't hire. Can't delegate. Can't scale. Forever trapped.
                     </div>
                 </div>
+            </div>
+
+            <!-- Add CTA after challenges -->
+            <div class="section-cta fade-in-up" style="margin-top: 60px; text-align: center;">
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 24px; font-weight: 600;">
+                    <em>Sound familiar?</em> Let's fix this together. 👇
+                </p>
+                <a href="#apply" class="cta-button">
+                    <span>Apply Now - Get Your Time Back</span>
+                    <div class="button-glow"></div>
+                </a>
             </div>
         </div>
     </section>
@@ -482,6 +506,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Add CTA after solution -->
+            <div class="section-cta fade-in-up" style="margin-top: 60px; text-align: center;">
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 24px; font-weight: 600;">
+                    Ready to stop wasting time on operations?
+                </p>
+                <a href="#apply" class="cta-button">
+                    <span>Apply for Partnership</span>
+                    <div class="button-glow"></div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -552,6 +587,14 @@
                         <p style="margin-top: 16px; font-size: 14px; opacity: 0.9;">50/50 split on net revenue. No hidden fees. No surprise charges. No backend costs eating into your income. You make money, we make money. Simple.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Add CTA after service breakdown -->
+            <div class="section-cta fade-in-up" style="margin-top: 60px; text-align: center;">
+                <a href="#apply" class="cta-button cta-button-hero">
+                    <span>Yes, I Want This - Apply Now</span>
+                    <div class="button-glow"></div>
+                </a>
             </div>
         </div>
     </section>

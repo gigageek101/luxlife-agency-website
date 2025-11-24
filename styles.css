@@ -153,30 +153,7 @@ body {
     text-shadow: 0 0 30px rgba(0, 175, 240, 0.5);
 }
 
-.logo-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background: var(--of-blue);
-    border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.3;
-    animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.3;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-}
+/* Logo glow removed - no blinking effect */
 
 .nav {
     display: flex;
@@ -775,13 +752,13 @@ body {
 .challenge-card {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 2px solid var(--of-blue-light);
+    border: 3px solid rgba(0, 175, 240, 0.2);
     border-radius: 24px;
-    padding: 32px;
+    padding: 40px;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 175, 240, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 175, 240, 0.12);
 }
 
 .challenge-card::before {
@@ -831,11 +808,12 @@ body {
 }
 
 .challenge-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
     color: var(--of-blue);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     letter-spacing: 0.5px;
+    line-height: 1.4;
 }
 
 /* Colorful challenge card variations */
@@ -896,10 +874,11 @@ body {
 }
 
 .challenge-text {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .challenge-list {
@@ -909,11 +888,12 @@ body {
 }
 
 .challenge-list li {
-    padding: 10px 0 10px 32px;
+    padding: 12px 0 12px 36px;
     position: relative;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-weight: 500;
 }
 
 .challenge-list li::before {
@@ -983,18 +963,19 @@ body {
 }
 
 .feature-group {
-    background: linear-gradient(135deg, rgba(0, 175, 240, 0.03) 0%, rgba(167, 139, 250, 0.03) 100%);
-    padding: 24px;
+    background: linear-gradient(135deg, rgba(0, 175, 240, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+    padding: 28px;
     border-radius: 16px;
     border-left: 4px solid var(--of-blue);
 }
 
 .feature-group strong {
     display: block;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
     color: var(--of-blue);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
 }
 
 .feature-group ul {
@@ -1004,10 +985,12 @@ body {
 }
 
 .feature-group ul li {
-    padding: 8px 0 8px 24px;
+    padding: 10px 0 10px 28px;
     position: relative;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .feature-group ul li::before {
@@ -1021,13 +1004,13 @@ body {
 .offer-card {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 2px solid var(--of-blue-light);
+    border: 3px solid rgba(0, 175, 240, 0.2);
     border-radius: 28px;
-    padding: 40px;
+    padding: 48px;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 175, 240, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 175, 240, 0.12);
 }
 
 .offer-card::before {
@@ -1122,18 +1105,20 @@ body {
 }
 
 .offer-title {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 800;
     color: var(--of-blue);
     letter-spacing: 0.5px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 .offer-description {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.9;
     margin-bottom: 24px;
+    font-weight: 500;
 }
 
 .offer-features {
@@ -1489,6 +1474,50 @@ body {
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.7;
+}
+
+/* ========================================
+   TOP TESTIMONIALS GRID
+======================================== */
+
+.top-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.top-video-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    border: 2px solid rgba(0, 175, 240, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.top-video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 175, 240, 0.2);
+    border-color: var(--of-blue);
+}
+
+.top-video-badge {
+    background: linear-gradient(135deg, var(--of-blue) 0%, var(--accent-purple) 100%);
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Landscape video styling */
+.landscape-video {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ========================================
@@ -2863,7 +2892,7 @@ body {
     display: grid;
     grid-template-columns: 500px 1fr;
     gap: 48px;
-    align-items: start;
+    align-items: center;
     margin-bottom: 60px;
     padding: 40px;
     background: white;
@@ -2912,20 +2941,22 @@ body {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio (landscape) */
     background: linear-gradient(135deg, rgba(0, 175, 240, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
     overflow: hidden;
     border-radius: 16px;
 }
 
 .video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: 16px 16px 0 0;
+}
+
+.video-wrapper video.landscape-video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .video-overlay {
@@ -3235,6 +3266,10 @@ body {
         gap: 32px;
         padding: 32px;
     }
+    
+    .top-testimonials-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3280,6 +3315,10 @@ body {
     
     .cta-box-text {
         font-size: 18px;
+    }
+    
+    .top-testimonials-grid {
+        gap: 24px;
     }
 }
 

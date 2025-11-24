@@ -34,3 +34,7 @@ logs/
 *.temp
 .temp/
 
+# Large video files (deployed to Vercel, not GitHub)
+*.mov
+*.mp4
+review-*.mov
