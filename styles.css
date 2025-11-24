@@ -5967,8 +5967,23 @@ body {
 }
 
 .offer-card-premium:nth-child(3)::after {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 30%, #7c3aed 70%, #6d28d9 100%);
+    box-shadow: 0 6px 25px rgba(167, 139, 250, 0.5);
+}
+
+.offer-card-premium:nth-child(4)::after {
     background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 30%, #ec4899 70%, #db2777 100%);
     box-shadow: 0 6px 25px rgba(255, 107, 157, 0.5);
+}
+
+.offer-card-premium:nth-child(5)::after {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 30%, #dc2626 70%, #b91c1c 100%);
+    box-shadow: 0 6px 25px rgba(249, 115, 22, 0.5);
+}
+
+.offer-card-premium:nth-child(6)::after {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 30%, #0f766e 70%, #115e59 100%);
+    box-shadow: 0 6px 25px rgba(20, 184, 166, 0.5);
 }
 
 /* EXCITING Professional Badges */
@@ -6009,6 +6024,30 @@ body {
     box-shadow: 
         0 8px 30px rgba(255, 107, 157, 0.5),
         0 4px 15px rgba(255, 107, 157, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.badge-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 30%, #047857 70%, #065f46 100%);
+    box-shadow: 
+        0 8px 30px rgba(16, 185, 129, 0.5),
+        0 4px 15px rgba(16, 185, 129, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.badge-orange {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 30%, #dc2626 70%, #b91c1c 100%);
+    box-shadow: 
+        0 8px 30px rgba(249, 115, 22, 0.5),
+        0 4px 15px rgba(249, 115, 22, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.badge-teal {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 30%, #0f766e 70%, #115e59 100%);
+    box-shadow: 
+        0 8px 30px rgba(20, 184, 166, 0.5),
+        0 4px 15px rgba(20, 184, 166, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -6070,6 +6109,36 @@ body {
         inset 0 -2px 0 rgba(0, 0, 0, 0.1);
 }
 
+.icon-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 30%, #047857 70%, #065f46 100%);
+    color: white;
+    box-shadow: 
+        0 12px 40px rgba(16, 185, 129, 0.4),
+        0 6px 20px rgba(16, 185, 129, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon-orange {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 30%, #dc2626 70%, #b91c1c 100%);
+    color: white;
+    box-shadow: 
+        0 12px 40px rgba(249, 115, 22, 0.4),
+        0 6px 20px rgba(249, 115, 22, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon-teal {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 30%, #0f766e 70%, #115e59 100%);
+    color: white;
+    box-shadow: 
+        0 12px 40px rgba(20, 184, 166, 0.4),
+        0 6px 20px rgba(20, 184, 166, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+}
+
 /* EXCITING & READABLE Offer Titles */
 .offer-title {
     font-size: 22px;
@@ -6104,6 +6173,30 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 2px 4px rgba(255, 107, 157, 0.2);
+}
+
+.title-green {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.title-orange {
+    background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+}
+
+.title-teal {
+    background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
 }
 
 /* EXCITING Offer Highlights */
@@ -6155,6 +6248,27 @@ body {
     background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 30%, #ec4899 70%, #db2777 100%);
     box-shadow: 
         0 8px 25px rgba(255, 107, 157, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.highlight-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 30%, #047857 70%, #065f46 100%);
+    box-shadow: 
+        0 8px 25px rgba(16, 185, 129, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.highlight-orange {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 30%, #dc2626 70%, #b91c1c 100%);
+    box-shadow: 
+        0 8px 25px rgba(249, 115, 22, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.highlight-teal {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 30%, #0f766e 70%, #115e59 100%);
+    box-shadow: 
+        0 8px 25px rgba(20, 184, 166, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -6288,8 +6402,71 @@ body {
 }
 
 .offer-card-premium:nth-child(3) .feature-item:nth-child(even) {
+    background: rgba(167, 139, 250, 0.02);
+    border-left-color: rgba(167, 139, 250, 0.15);
+}
+
+/* Card 4 - Social Media Growth (Pink) */
+.offer-card-premium:nth-child(4) .feature-item {
+    background: rgba(255, 107, 157, 0.03);
+    border-left-color: rgba(255, 107, 157, 0.2);
+}
+
+.offer-card-premium:nth-child(4) .feature-item::before {
+    color: var(--accent-pink);
+    text-shadow: 0 1px 2px rgba(255, 107, 157, 0.2);
+}
+
+.offer-card-premium:nth-child(4) .feature-item:nth-child(odd) {
+    background: rgba(255, 107, 157, 0.04);
+    border-left-color: rgba(255, 107, 157, 0.25);
+}
+
+.offer-card-premium:nth-child(4) .feature-item:nth-child(even) {
     background: rgba(255, 107, 157, 0.02);
     border-left-color: rgba(255, 107, 157, 0.15);
+}
+
+/* Card 5 - Content Strategy (Orange) */
+.offer-card-premium:nth-child(5) .feature-item {
+    background: rgba(249, 115, 22, 0.03);
+    border-left-color: rgba(249, 115, 22, 0.2);
+}
+
+.offer-card-premium:nth-child(5) .feature-item::before {
+    color: #f97316;
+    text-shadow: 0 1px 2px rgba(249, 115, 22, 0.2);
+}
+
+.offer-card-premium:nth-child(5) .feature-item:nth-child(odd) {
+    background: rgba(249, 115, 22, 0.04);
+    border-left-color: rgba(249, 115, 22, 0.25);
+}
+
+.offer-card-premium:nth-child(5) .feature-item:nth-child(even) {
+    background: rgba(249, 115, 22, 0.02);
+    border-left-color: rgba(249, 115, 22, 0.15);
+}
+
+/* Card 6 - Partnership & Support (Teal) */
+.offer-card-premium:nth-child(6) .feature-item {
+    background: rgba(20, 184, 166, 0.03);
+    border-left-color: rgba(20, 184, 166, 0.2);
+}
+
+.offer-card-premium:nth-child(6) .feature-item::before {
+    color: #14b8a6;
+    text-shadow: 0 1px 2px rgba(20, 184, 166, 0.2);
+}
+
+.offer-card-premium:nth-child(6) .feature-item:nth-child(odd) {
+    background: rgba(20, 184, 166, 0.04);
+    border-left-color: rgba(20, 184, 166, 0.25);
+}
+
+.offer-card-premium:nth-child(6) .feature-item:nth-child(even) {
+    background: rgba(20, 184, 166, 0.02);
+    border-left-color: rgba(20, 184, 166, 0.15);
 }
 
 /* Removed forced color progression - using natural website colors instead */
@@ -6298,38 +6475,45 @@ body {
     display: none; /* Keep clean look */
 }
 
-/* Beautiful three-card layout using website colors */
-.offers-grid {
+/* Beautiful six-card layout with fade animations */
+.offers-grid-six {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 40px;
 }
 
-.offers-grid .offer-card-premium:nth-child(3) {
-    grid-column: auto;
-    max-width: none;
-    margin: 0;
-    justify-self: auto;
+/* Fade-in animation for scroll */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
 }
 
-/* Responsive Design for Beautiful Three-Column Layout */
-@media (max-width: 1200px) {
-    .offers-grid {
-        grid-template-columns: 1fr;
+.fade-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design for Beautiful Six-Card Layout */
+@media (max-width: 1400px) {
+    .offers-grid-six {
+        grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
-    
-    .offers-grid .offer-card-premium:nth-child(3) {
-        grid-column: 1;
-        max-width: none;
-        margin: 0;
+}
+
+@media (max-width: 900px) {
+    .offers-grid-six {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
 @media (max-width: 768px) {
     .offers-grid-exciting,
-    .offers-grid {
+    .offers-grid,
+    .offers-grid-six {
         grid-template-columns: 1fr;
         gap: 20px;
     }

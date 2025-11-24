@@ -760,9 +760,13 @@ const initVideoTestimonials = () => {
 
 // Initialize video testimonials
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initVideoTestimonials);
+    document.addEventListener('DOMContentLoaded', function() {
+        initVideoTestimonials();
+        initFadeOnScroll();
+    });
 } else {
     initVideoTestimonials();
+    initFadeOnScroll();
 }
 
 // Scroll-triggered fade effects for Solution section
@@ -806,5 +810,33 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initScrollFadeEffects);
 } else {
     initScrollFadeEffects();
+}
+
+// Fade-in animation on scroll for the 6-card layout
+function initFadeOnScroll() {
+    const fadeElements = document.querySelectorAll('.fade-on-scroll');
+    
+    if (fadeElements.length === 0) return;
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay) || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
 }
 
