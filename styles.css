@@ -497,6 +497,79 @@ body {
     opacity: 0.5;
 }
 
+/* ========================================
+   MINI DIVIDERS (Small Pattern Breaks)
+======================================== */
+
+.mini-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 40px 0;
+}
+
+.mini-divider-line {
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent 0%, var(--of-blue) 50%, transparent 100%);
+}
+
+.mini-divider-icon {
+    font-size: 24px;
+    animation: pulse 2s infinite;
+}
+
+/* Colored highlight boxes */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(0, 175, 240, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    padding: 24px;
+    border-radius: 16px;
+    border-left: 4px solid var(--of-blue);
+    margin: 24px 0;
+    box-shadow: 0 4px 12px rgba(0, 175, 240, 0.1);
+}
+
+.highlight-box-pink {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 143, 171, 0.1) 100%);
+    border-left-color: var(--accent-pink);
+}
+
+.highlight-box-purple {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(196, 181, 253, 0.1) 100%);
+    border-left-color: var(--accent-purple);
+}
+
+.highlight-box-yellow {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%);
+    border-left-color: #F59E0B;
+}
+
+/* Section tags with different colors */
+.section-tag.tag-pink {
+    background: rgba(255, 107, 157, 0.1);
+    border-color: rgba(255, 107, 157, 0.3);
+    color: var(--accent-pink);
+}
+
+.section-tag.tag-purple {
+    background: rgba(167, 139, 250, 0.1);
+    border-color: rgba(167, 139, 250, 0.3);
+    color: var(--accent-purple);
+}
+
+.section-tag.tag-yellow {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #F59E0B;
+}
+
+.section-tag.tag-green {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10B981;
+}
+
 .hero-benefits {
     display: flex;
     justify-content: center;
@@ -509,12 +582,31 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
-    background: linear-gradient(135deg, rgba(230, 247, 253, 0.8) 0%, rgba(255, 245, 248, 0.8) 100%);
+    background: white;
     padding: 20px 28px;
     border-radius: 20px;
-    border: 2px solid var(--of-blue-light);
+    border: 3px solid var(--of-blue-light);
     box-shadow: 0 4px 20px rgba(0, 175, 240, 0.15);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(230, 247, 253, 0.3) 0%, rgba(255, 245, 248, 0.3) 100%);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-card:hover::before {
+    opacity: 1;
 }
 
 .benefit-card:hover {
@@ -523,9 +615,55 @@ body {
     border-color: var(--of-blue);
 }
 
+.benefit-icon,
+.benefit-text {
+    position: relative;
+    z-index: 1;
+}
+
 .benefit-icon {
     font-size: 36px;
     line-height: 1;
+}
+
+/* Colorful benefit card variations */
+.benefit-card:nth-child(1) {
+    border-color: var(--accent-purple);
+}
+
+.benefit-card:nth-child(1):hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 8px 30px rgba(167, 139, 250, 0.35);
+}
+
+.benefit-card:nth-child(1) .benefit-icon {
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.6));
+}
+
+.benefit-card:nth-child(2) {
+    border-color: var(--of-blue);
+}
+
+.benefit-card:nth-child(2):hover {
+    border-color: var(--of-blue);
+    box-shadow: 0 8px 30px rgba(0, 175, 240, 0.35);
+}
+
+.benefit-card:nth-child(2) .benefit-icon {
+    filter: drop-shadow(0 0 8px rgba(0, 175, 240, 0.6));
+}
+
+.benefit-card:nth-child(3) {
+    border-color: var(--accent-pink);
+}
+
+.benefit-card:nth-child(3):hover {
+    border-color: var(--accent-pink);
+    box-shadow: 0 8px 30px rgba(255, 107, 157, 0.35);
+}
+
+.benefit-card:nth-child(3) .benefit-icon {
+    filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.6));
 }
 
 .benefit-text {
@@ -718,6 +856,63 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Colorful challenge card variations */
+.challenge-card:nth-child(1) .challenge-icon {
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF8FAB 100%);
+}
+
+.challenge-card:nth-child(1) .challenge-title {
+    color: #FF6B9D;
+}
+
+.challenge-card:nth-child(1) .key-point {
+    border-left-color: #FF6B9D;
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(255, 143, 171, 0.15) 100%);
+}
+
+.challenge-card:nth-child(2) .challenge-icon {
+    background: linear-gradient(135deg, #A78BFA 0%, #C4B5FD 100%);
+}
+
+.challenge-card:nth-child(2) .challenge-title {
+    color: #A78BFA;
+}
+
+.challenge-card:nth-child(2) .key-point {
+    border-left-color: #A78BFA;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(196, 181, 253, 0.15) 100%);
+}
+
+.challenge-card:nth-child(3) .challenge-icon {
+    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+}
+
+.challenge-card:nth-child(3) .challenge-title {
+    color: #F59E0B;
+}
+
+.challenge-card:nth-child(3) .key-point {
+    border-left-color: #F59E0B;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(251, 191, 36, 0.15) 100%);
+}
+
+.challenge-card:nth-child(4) .challenge-icon {
+    background: linear-gradient(135deg, #00AFF0 0%, #00D9FF 100%);
+}
+
+.challenge-card:nth-child(5) .challenge-icon {
+    background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+}
+
+.challenge-card:nth-child(5) .challenge-title {
+    color: #EF4444;
+}
+
+.challenge-card:nth-child(5) .key-point {
+    border-left-color: #EF4444;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(248, 113, 113, 0.15) 100%);
+}
+
 .challenge-text {
     font-size: 15px;
     color: var(--text-secondary);
@@ -858,6 +1053,27 @@ body {
     color: white;
 }
 
+/* Colorful offer card variations */
+.offer-card:nth-child(1) .offer-icon {
+    background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+}
+
+.offer-card:nth-child(2) .offer-icon {
+    background: linear-gradient(135deg, #00AFF0 0%, #00D9FF 100%);
+}
+
+.offer-card:nth-child(3) .offer-icon {
+    background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+}
+
+.offer-card:nth-child(4) .offer-icon {
+    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+}
+
+.offer-card:nth-child(5) .offer-icon {
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF8FAB 100%);
+}
+
 .offer-title {
     font-size: 19px;
     font-weight: 800;
@@ -991,6 +1207,32 @@ body {
 .requirement-content strong {
     color: var(--text-primary);
     font-weight: 600;
+}
+
+.requirement-item-highlight {
+    background: linear-gradient(135deg, rgba(230, 247, 253, 0.5) 0%, rgba(240, 230, 255, 0.5) 100%);
+    border-left: 6px solid var(--accent-purple);
+}
+
+.info-box {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(0, 175, 240, 0.1) 100%);
+    padding: 20px;
+    border-radius: 16px;
+    border: 2px solid rgba(167, 139, 250, 0.3);
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 1.8;
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.1);
+}
+
+.info-box strong {
+    color: var(--accent-purple);
+    font-weight: 800;
+}
+
+.info-box br + strong {
+    display: block;
+    margin-top: 8px;
 }
 
 /* ========================================
