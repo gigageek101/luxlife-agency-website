@@ -5905,13 +5905,13 @@ body {
 }
 
 /* ========================================
-   SOLUTION SECTION - NO ANIMATIONS, COMPACT & READABLE
+   EXCITING SOLUTION SECTION - PROFESSIONAL & DYNAMIC
 ======================================== */
 .offers-grid-exciting {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 30px;
+    gap: 28px;
+    margin-top: 40px;
 }
 
 .offers-grid-exciting .offer-card-premium:nth-child(3) {
@@ -5921,14 +5921,16 @@ body {
 }
 
 .offer-card-premium {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 175, 240, 0.15);
-    border-radius: 16px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid transparent;
+    border-radius: 24px;
     padding: 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    /* NO animations or transitions */
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.08),
+        0 8px 30px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .offer-card-premium::before {
@@ -5937,47 +5939,433 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    border-radius: 16px 16px 0 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.02) 100%);
+    border-radius: 24px;
+    z-index: 1;
 }
 
-.offer-card-premium:nth-child(1)::before {
-    background: linear-gradient(90deg, var(--of-blue), var(--neon-blue));
+.offer-card-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    border-radius: 24px 24px 0 0;
+    z-index: 2;
 }
 
-.offer-card-premium:nth-child(2)::before {
-    background: linear-gradient(90deg, var(--accent-purple), #8B5CF6);
+.offer-card-premium:nth-child(1)::after {
+    background: linear-gradient(135deg, #00aff0 0%, #0099cc 30%, #007acc 70%, #0066aa 100%);
+    box-shadow: 0 6px 25px rgba(0, 175, 240, 0.5);
 }
 
-.offer-card-premium:nth-child(3)::before {
-    background: linear-gradient(90deg, var(--accent-pink), #F472B6);
+.offer-card-premium:nth-child(2)::after {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 30%, #7c3aed 70%, #6d28d9 100%);
+    box-shadow: 0 6px 25px rgba(167, 139, 250, 0.5);
 }
 
-/* Professional Offer Badges */
+.offer-card-premium:nth-child(3)::after {
+    background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 30%, #ec4899 70%, #db2777 100%);
+    box-shadow: 0 6px 25px rgba(255, 107, 157, 0.5);
+}
+
+/* EXCITING Professional Badges */
 .offer-badge {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 8px 16px;
+    top: 28px;
+    right: 28px;
+    padding: 12px 20px;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: 20px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 30px;
     color: white;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
 }
 
 .badge-blue {
-    background: linear-gradient(135deg, var(--of-blue), var(--neon-blue));
+    background: linear-gradient(135deg, #00aff0 0%, #0099cc 30%, #007acc 70%, #0066aa 100%);
+    box-shadow: 
+        0 8px 30px rgba(0, 175, 240, 0.5),
+        0 4px 15px rgba(0, 175, 240, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .badge-purple {
-    background: linear-gradient(135deg, var(--accent-purple), #8B5CF6);
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 30%, #7c3aed 70%, #6d28d9 100%);
+    box-shadow: 
+        0 8px 30px rgba(167, 139, 250, 0.5),
+        0 4px 15px rgba(167, 139, 250, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .badge-pink {
-    background: linear-gradient(135deg, var(--accent-pink), #F472B6);
+    background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 30%, #ec4899 70%, #db2777 100%);
+    box-shadow: 
+        0 8px 30px rgba(255, 107, 157, 0.5),
+        0 4px 15px rgba(255, 107, 157, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* EXCITING Offer Headers */
+.offer-header {
+    padding: 35px 28px 0 28px;
+    text-align: center;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.offer-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 24px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.offer-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 2.5;
+}
+
+.icon-blue {
+    background: linear-gradient(135deg, #00aff0 0%, #0099cc 30%, #007acc 70%, #0066aa 100%);
+    color: white;
+    box-shadow: 
+        0 12px 40px rgba(0, 175, 240, 0.4),
+        0 6px 20px rgba(0, 175, 240, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 30%, #7c3aed 70%, #6d28d9 100%);
+    color: white;
+    box-shadow: 
+        0 12px 40px rgba(167, 139, 250, 0.4),
+        0 6px 20px rgba(167, 139, 250, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon-pink {
+    background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 30%, #ec4899 70%, #db2777 100%);
+    color: white;
+    box-shadow: 
+        0 12px 40px rgba(255, 107, 157, 0.4),
+        0 6px 20px rgba(255, 107, 157, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* EXCITING & READABLE Offer Titles */
+.offer-title {
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.title-blue {
+    background: linear-gradient(135deg, #00aff0 0%, #007acc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 175, 240, 0.2);
+}
+
+.title-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(167, 139, 250, 0.2);
+}
+
+.title-pink {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(255, 107, 157, 0.2);
+}
+
+/* EXCITING Offer Highlights */
+.offer-highlight {
+    text-align: center;
+    padding: 16px 28px;
+    margin: 0 28px 20px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    border-radius: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
+    z-index: 1;
+}
+
+.offer-highlight strong {
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-blue {
+    background: linear-gradient(135deg, #00aff0 0%, #0099cc 30%, #007acc 70%, #0066aa 100%);
+    box-shadow: 
+        0 8px 25px rgba(0, 175, 240, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.highlight-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 30%, #7c3aed 70%, #6d28d9 100%);
+    box-shadow: 
+        0 8px 25px rgba(167, 139, 250, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.highlight-pink {
+    background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 30%, #ec4899 70%, #db2777 100%);
+    box-shadow: 
+        0 8px 25px rgba(255, 107, 157, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* EXCITING & CLEAN Feature Groups */
+.feature-group {
+    margin-bottom: 24px;
+    padding: 0 28px;
+    position: relative;
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.feature-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--of-blue), var(--accent-purple));
+    border-radius: 1px;
+}
+
+.feature-icon {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(0, 175, 240, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    border: 2px solid rgba(0, 175, 240, 0.2);
+}
+
+.feature-header strong {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* EXCITING & SIMPLE Feature Items */
+.feature-item {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 10px 0;
+    position: relative;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.feature-item::before {
+    content: "✓";
+    color: #10B981;
+    font-weight: 900;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    text-shadow: 0 1px 2px rgba(16, 185, 129, 0.3);
+}
+
+.feature-item strong {
+    font-weight: 700;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.feature-separator {
+    display: none; /* Keep clean look */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offers-grid-exciting {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .offers-grid-exciting .offer-card-premium:nth-child(3) {
+        grid-column: 1;
+    }
+    
+    .offer-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .offer-title {
+        font-size: 18px;
+    }
+}
+
+/* ========================================
+   EXCITING SOLUTION SECTION - PROFESSIONAL & DYNAMIC
+======================================== */
+.offers-grid-exciting {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.offers-grid-exciting .offer-card-premium:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: none;
+    margin: 0;
+}
+
+.offer-card-premium {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.1),
+        0 4px 20px rgba(0, 0, 0, 0.05);
+    /* NO hover animations */
+}
+
+.offer-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.offer-card-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+
+.offer-card-premium:nth-child(1)::after {
+    background: linear-gradient(135deg, #00aff0 0%, #0099cc 50%, #007acc 100%);
+    box-shadow: 0 4px 20px rgba(0, 175, 240, 0.4);
+}
+
+.offer-card-premium:nth-child(2)::after {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
+    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.4);
+}
+
+.offer-card-premium:nth-child(3)::after {
+    background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 50%, #ec4899 100%);
+    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.4);
+}
+
+/* EXCITING Professional Badges */
+.offer-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 10px 18px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    border-radius: 25px;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.2),
+        0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.badge-blue {
+    background: linear-gradient(135deg, #00aff0 0%, #0099cc 50%, #007acc 100%);
+    box-shadow: 
+        0 6px 25px rgba(0, 175, 240, 0.4),
+        0 2px 12px rgba(0, 175, 240, 0.2);
+}
+
+.badge-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
+    box-shadow: 
+        0 6px 25px rgba(167, 139, 250, 0.4),
+        0 2px 12px rgba(167, 139, 250, 0.2);
+}
+
+.badge-pink {
+    background: linear-gradient(135deg, #ff6b9d 0%, #f472b6 50%, #ec4899 100%);
+    box-shadow: 
+        0 6px 25px rgba(255, 107, 157, 0.4),
+        0 2px 12px rgba(255, 107, 157, 0.2);
 }
 
 /* Compact Offer Headers */
