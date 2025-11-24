@@ -800,3 +800,58 @@ if (document.readyState === 'loading') {
     testimonialCarousel();
 }
 
+// ========================================
+// Other Socials Functionality
+// ========================================
+
+const initOtherSocials = () => {
+    const addBtn = document.getElementById('addOtherSocialsBtn');
+    const container = document.getElementById('otherSocialsContainer');
+    let socialCount = 0;
+    
+    if (!addBtn || !container) return;
+    
+    addBtn.addEventListener('click', () => {
+        socialCount++;
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'other-social-input-wrapper';
+        wrapper.style.opacity = '0';
+        wrapper.style.transform = 'translateY(-10px)';
+        
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `other-social-${socialCount}`;
+        input.placeholder = 'Platform + handle (e.g., Twitter: @username)';
+        input.className = 'form-input';
+        
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'remove-social-btn';
+        removeBtn.innerHTML = '✕';
+        removeBtn.addEventListener('click', () => {
+            wrapper.style.opacity = '0';
+            wrapper.style.transform = 'translateY(-10px)';
+            setTimeout(() => wrapper.remove(), 300);
+        });
+        
+        wrapper.appendChild(input);
+        wrapper.appendChild(removeBtn);
+        container.appendChild(wrapper);
+        
+        // Animate in
+        setTimeout(() => {
+            wrapper.style.transition = 'all 0.3s ease';
+            wrapper.style.opacity = '1';
+            wrapper.style.transform = 'translateY(0)';
+        }, 10);
+    });
+};
+
+// Initialize other socials functionality
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOtherSocials);
+} else {
+    initOtherSocials();
+}
+
