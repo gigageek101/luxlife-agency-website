@@ -855,3 +855,52 @@ if (document.readyState === 'loading') {
     initOtherSocials();
 }
 
+// ========================================
+// Video Testimonials Functionality
+// ========================================
+
+const initVideoTestimonials = () => {
+    const videos = document.querySelectorAll('.video-wrapper video');
+    
+    videos.forEach(video => {
+        const wrapper = video.closest('.video-wrapper');
+        const overlay = wrapper.querySelector('.video-overlay');
+        
+        // Hide overlay when video plays
+        video.addEventListener('play', () => {
+            if (overlay) {
+                overlay.style.opacity = '0';
+            }
+        });
+        
+        // Show overlay when video pauses
+        video.addEventListener('pause', () => {
+            if (overlay && video.currentTime === 0) {
+                overlay.style.opacity = '1';
+            }
+        });
+        
+        // Show overlay when video ends
+        video.addEventListener('ended', () => {
+            if (overlay) {
+                overlay.style.opacity = '1';
+            }
+        });
+        
+        // Click overlay to play video
+        if (overlay) {
+            overlay.addEventListener('click', (e) => {
+                e.stopPropagation();
+                video.play();
+            });
+        }
+    });
+};
+
+// Initialize video testimonials
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVideoTestimonials);
+} else {
+    initVideoTestimonials();
+}
+
