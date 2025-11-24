@@ -369,12 +369,14 @@ body {
 .emphasis-box {
     display: inline-block;
     background: linear-gradient(135deg, rgba(0, 175, 240, 0.15) 0%, rgba(255, 107, 157, 0.15) 100%);
-    padding: 16px 24px;
+    padding: 20px 28px;
     border-radius: 16px;
-    border-left: 4px solid var(--of-blue);
+    border-left: 5px solid var(--of-blue);
     font-weight: 700;
     color: var(--text-primary);
     box-shadow: 0 4px 12px rgba(0, 175, 240, 0.15);
+    font-size: 17px;
+    line-height: 1.8;
 }
 
 .cta-button-secondary {
@@ -500,25 +502,25 @@ body {
 /* Colored highlight boxes */
 .highlight-box {
     background: linear-gradient(135deg, rgba(0, 175, 240, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
-    padding: 24px;
+    padding: 28px 32px;
     border-radius: 16px;
-    border-left: 4px solid var(--of-blue);
-    margin: 24px 0;
+    border-left: 5px solid var(--of-blue);
+    margin: 28px 0;
     box-shadow: 0 4px 12px rgba(0, 175, 240, 0.1);
 }
 
 .highlight-box-pink {
-    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 143, 171, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.12) 0%, rgba(255, 143, 171, 0.12) 100%);
     border-left-color: var(--accent-pink);
 }
 
 .highlight-box-purple {
-    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(196, 181, 253, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(196, 181, 253, 0.12) 100%);
     border-left-color: var(--accent-purple);
 }
 
 .highlight-box-yellow {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(251, 191, 36, 0.12) 100%);
     border-left-color: #F59E0B;
 }
 
@@ -907,14 +909,14 @@ body {
 
 .key-point {
     background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
-    padding: 16px 20px;
-    border-radius: 12px;
-    border-left: 4px solid var(--accent-pink);
-    margin: 20px 0 12px;
+    padding: 24px 28px;
+    border-radius: 16px;
+    border-left: 5px solid var(--accent-pink);
+    margin: 28px 0 20px;
     font-weight: 700;
     color: var(--text-primary);
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.9;
     box-shadow: 0 4px 12px rgba(255, 107, 157, 0.15);
 }
 
@@ -948,11 +950,11 @@ body {
 }
 
 .challenge-card-main {
-    padding: 48px;
+    padding: 48px 56px;
 }
 
 .offer-card-expanded {
-    padding: 48px;
+    padding: 48px 56px;
 }
 
 .offer-features {
@@ -1165,11 +1167,11 @@ body {
 .requirements-column {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 2px solid var(--of-blue-light);
+    border: 3px solid rgba(0, 175, 240, 0.2);
     border-radius: 28px;
-    padding: 40px;
+    padding: 48px;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(0, 175, 240, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 175, 240, 0.12);
 }
 
 .requirements-column:hover {
@@ -1223,17 +1225,19 @@ body {
 }
 
 .requirement-content h4 {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 800;
     color: var(--of-blue);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     letter-spacing: 0.5px;
+    line-height: 1.4;
 }
 
 .requirement-content p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.9;
+    font-weight: 500;
 }
 
 .requirement-content strong {
@@ -1247,14 +1251,15 @@ body {
 }
 
 .info-box {
-    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(0, 175, 240, 0.1) 100%);
-    padding: 20px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(0, 175, 240, 0.12) 100%);
+    padding: 24px 28px;
     border-radius: 16px;
     border: 2px solid rgba(167, 139, 250, 0.3);
-    margin: 16px 0;
-    font-size: 15px;
-    line-height: 1.8;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 2;
     box-shadow: 0 4px 12px rgba(167, 139, 250, 0.1);
+    font-weight: 500;
 }
 
 .info-box strong {
@@ -1285,11 +1290,11 @@ body {
 .breakdown-card {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 2px solid var(--of-blue-light);
+    border: 3px solid rgba(0, 175, 240, 0.2);
     border-radius: 28px;
-    padding: 48px;
+    padding: 48px 56px;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(0, 175, 240, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 175, 240, 0.12);
 }
 
 .breakdown-card:hover {
@@ -1304,11 +1309,12 @@ body {
 }
 
 .breakdown-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     color: var(--of-blue);
-    margin-bottom: 28px;
-    letter-spacing: 1px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
 }
 
 .breakdown-list {
@@ -1339,10 +1345,11 @@ body {
 }
 
 .breakdown-text {
-    font-size: 15px;
+    font-size: 17px;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.9;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .breakdown-text strong {
@@ -2216,12 +2223,17 @@ body {
     .challenge-card,
     .offer-card,
     .blog-card {
-        padding: 24px;
+        padding: 28px;
+    }
+    
+    .challenge-card-main,
+    .offer-card-expanded {
+        padding: 32px;
     }
 
     .requirements-column,
     .breakdown-card {
-        padding: 28px;
+        padding: 32px 28px;
     }
 
     .blog-title {
@@ -2234,6 +2246,25 @@ body {
 
     .testimonial-section-title {
         font-size: 24px;
+    }
+    
+    .key-point {
+        padding: 20px 24px;
+        font-size: 16px;
+    }
+    
+    .highlight-box {
+        padding: 24px 28px;
+    }
+    
+    .info-box {
+        padding: 20px 24px;
+        font-size: 15px;
+    }
+    
+    .emphasis-box {
+        padding: 18px 24px;
+        font-size: 16px;
     }
 }
 
