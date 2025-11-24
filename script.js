@@ -83,41 +83,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========================================
-// ANIMATED COUNTER FOR STATS
+// BENEFIT CARDS ANIMATION
 // ========================================
 
-const animateCounter = (element, target, duration = 2000) => {
-    let current = 0;
-    const increment = target / (duration / 16); // 60fps
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-};
-
-// Trigger counter animation when stats come into view
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.dataset.target);
-                animateCounter(stat, target);
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
-}
+// Benefit cards now use static icons and text
+// No counter animation needed - just hover effects via CSS
 
 // ========================================
 // PARALLAX EFFECT FOR GRADIENT ORBS
