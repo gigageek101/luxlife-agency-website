@@ -636,3 +636,197 @@ Professional OnlyFans Management | 50/50 Partnership
 
 console.log('%cInterested in working with us? Apply at the bottom of the page!', 'color: #94A3B8; font-size: 12px;');
 
+// ========================================
+// TESTIMONIAL CAROUSEL
+// ========================================
+
+const testimonialCarousel = () => {
+    const carousel = document.getElementById('testimonialCarousel');
+    const slides = carousel.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevButton = document.getElementById('prevTestimonial');
+    const nextButton = document.getElementById('nextTestimonial');
+    
+    let currentSlide = 0;
+    let autoPlayInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    // Show specific slide
+    const showSlide = (index) => {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => {
+            slide.classList.remove('active', 'slide-out-left', 'slide-out-right');
+        });
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Add active class to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        
+        currentSlide = index;
+    };
+    
+    // Next slide
+    const nextSlide = () => {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('slide-out-left');
+        setTimeout(() => {
+            showSlide(nextIndex);
+        }, 300);
+    };
+    
+    // Previous slide
+    const prevSlide = () => {
+        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        slides[currentSlide].classList.add('slide-out-right');
+        setTimeout(() => {
+            showSlide(prevIndex);
+        }, 300);
+    };
+    
+    // Auto play
+    const startAutoPlay = () => {
+        autoPlayInterval = setInterval(() => {
+            nextSlide();
+        }, 5000); // Change slide every 5 seconds
+    };
+    
+    const stopAutoPlay = () => {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+        }
+    };
+    
+    // Button click handlers
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            stopAutoPlay();
+            nextSlide();
+            startAutoPlay();
+        });
+    }
+    
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            stopAutoPlay();
+            prevSlide();
+            startAutoPlay();
+        });
+    }
+    
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopAutoPlay();
+            if (index > currentSlide) {
+                slides[currentSlide].classList.add('slide-out-left');
+            } else if (index < currentSlide) {
+                slides[currentSlide].classList.add('slide-out-right');
+            }
+            setTimeout(() => {
+                showSlide(index);
+            }, 300);
+            startAutoPlay();
+        });
+    });
+    
+    // Touch/swipe handlers for mobile
+    if (carousel) {
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        // Mouse drag handlers for desktop
+        let isDragging = false;
+        let dragStartX = 0;
+        
+        carousel.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            dragStartX = e.clientX;
+            carousel.style.cursor = 'grabbing';
+        });
+        
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+        });
+        
+        carousel.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            carousel.style.cursor = 'grab';
+            
+            const dragEndX = e.clientX;
+            const diff = dragStartX - dragEndX;
+            
+            if (Math.abs(diff) > 50) {
+                stopAutoPlay();
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+                startAutoPlay();
+            }
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            isDragging = false;
+            carousel.style.cursor = 'grab';
+        });
+        
+        carousel.style.cursor = 'grab';
+    }
+    
+    const handleSwipe = () => {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            stopAutoPlay();
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+            startAutoPlay();
+        }
+    };
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            stopAutoPlay();
+            prevSlide();
+            startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            stopAutoPlay();
+            nextSlide();
+            startAutoPlay();
+        }
+    });
+    
+    // Pause on hover
+    if (carousel) {
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // Start auto play
+    startAutoPlay();
+};
+
+// Initialize carousel when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', testimonialCarousel);
+} else {
+    testimonialCarousel();
+}
+
